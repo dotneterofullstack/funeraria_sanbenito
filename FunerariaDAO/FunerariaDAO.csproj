@@ -79,7 +79,14 @@
     <Compile Include="Models\TipoTelefonoFilter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="SQL_BD_SCRIPTS\1_BD_FUNERARIA_ESTADOS_MUNICIPIOS_CON_DATOS.sql" />
+    <Content Include="SQL_BD_SCRIPTS\2_BD_FUNERARIA__STORED_PROC_ESTADOS_MUNICIPIOS.sql" />
+    <Content Include="SQL_BD_SCRIPTS\3_BD_FUNERARIA__CLIENTES.sql" />
+    <Content Include="SQL_BD_SCRIPTS\4_BD_FUNERARIA__STORED_PROC_CLIENTES.sql" />
+    <Content Include="SQL_BD_SCRIPTS\5_BD_FUNERARIA__ASESORES.sql" />
+    <Content Include="SQL_BD_SCRIPTS\6_BD_FUNERARIA__STORED_PROC_ASESORES.sql" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
