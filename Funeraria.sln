@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FunerariaDAO", "FunerariaDAO\FunerariaDAO.csproj", "{95678882-4DB2-40B0-B23C-EB0E7524490E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FunerarriaTest", "FunerarriaTest\FunerarriaTest.csproj", "{FE3F66B6-BEA9-40B1-984F-68E39794F492}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FunerariaAPI", "FunerariaAPI\FunerariaAPI.csproj", "{A5864E63-7C6F-4C2E-8D97-2587BA80B360}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{95678882-4DB2-40B0-B23C-EB0E7524490E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95678882-4DB2-40B0-B23C-EB0E7524490E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95678882-4DB2-40B0-B23C-EB0E7524490E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95678882-4DB2-40B0-B23C-EB0E7524490E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE3F66B6-BEA9-40B1-984F-68E39794F492}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE3F66B6-BEA9-40B1-984F-68E39794F492}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE3F66B6-BEA9-40B1-984F-68E39794F492}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE3F66B6-BEA9-40B1-984F-68E39794F492}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5864E63-7C6F-4C2E-8D97-2587BA80B360}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5864E63-7C6F-4C2E-8D97-2587BA80B360}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5864E63-7C6F-4C2E-8D97-2587BA80B360}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5864E63-7C6F-4C2E-8D97-2587BA80B360}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
