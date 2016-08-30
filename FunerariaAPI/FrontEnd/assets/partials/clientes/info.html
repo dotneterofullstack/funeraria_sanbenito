@@ -1,0 +1,97 @@
+<p>
+    <h4>Información del Cliente</h4>
+</p>
+<hr>
+<div class="form-horizontal">
+    <h5>
+        DATOS GENERALES
+    </h5>
+    <hr>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label class="control-label col-sm-4" for="Nombre">Nombre</label>
+                <div class="col-sm-8">
+                    <p class="form-control-static">
+                        {{ cliente.Nombre }}
+                    </p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-4" for="aPat">Apellido Paterno</label>
+                <div class="col-sm-8">
+                    <p class="form-control-static">
+                        {{ cliente.ApellidoPat }}
+                    </p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-4" for="aMat">Apellido Materno</label>
+                <div class="col-sm-8">
+                    <p class="form-control-static">
+                        {{ cliente.ApellidoMat }}
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label class="control-label col-sm-4" for="rfc">RFC</label>
+                <div class="col-sm-8">
+                    <p class="form-control-static">
+                        {{ cliente.RFC }}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h5>
+        DIRECCIONES
+    </h5>
+    <div class="col-sm-12">
+        <hr />
+        <div class="table-responsive">
+            <table class="table table-striped table-condensed">
+                <thead>
+                    <th>Dirección</th>
+                    <th>Colonia</th>
+                    <th>Municipio</th>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="domicilio in cliente.Domicilios">
+                        <td>{{ domicilio.Calle + " No. " + domicilio.NumeroExterior + 
+                            (domicilio.NumeroInterior == null ? "" : 
+                            " Int. " + domicilio.NumeroInterior) + "  entre " +
+                            domicilio.EntreCalles }}</td>
+                        <td>{{ domicilio.Colonia }}</td>
+                        <td>{{ (todosMunicipios | filter: {ID: domicilio.IdMunicipio })[0].Nombre }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <hr />
+    </div>
+    <h5>
+        TELÉFONOS
+    </h5>
+    <div class="col-sm-12">
+        <hr />
+        <div class="table-responsive">
+            <table class="table table-striped table-condensed">
+                <thead>
+                    <th>Teléfono</th>
+                    <th>Estensión</th>
+                    <th>Tipo</th>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="telefono in cliente.Telefonos">
+                        <td>{{ telefono.NoTelefono }}</td>
+                        <td>{{ telefono.Extension }}</td>
+                        <td>{{ (tipostelefonos | filter: {ID: telefono.IdTipoTelefono })[0].Nombre }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <hr />
+    </div>
+</div>

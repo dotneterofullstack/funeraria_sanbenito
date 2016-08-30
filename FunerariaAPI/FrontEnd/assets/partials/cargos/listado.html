@@ -1,0 +1,17 @@
+<p>
+    <h4>Listado de Cargos del Personal</h4>
+</p>
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Descripcion</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="cargo in cargos">
+                <td>{{ cargo.Nombre }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

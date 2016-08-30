@@ -1,0 +1,232 @@
+<div class="form-horizontal">
+    <h5>
+        DATOS GENERALES
+    </h5>
+    <fieldset ng-disabled="clienteGuardado">
+        <form class="row" novalidate name="frmCliente">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label class="control-label col-sm-4" for="Nombre">Nombre</label>
+                    <div class="col-sm-8">
+                        <input required maxlength="100" class="form-control input-sm" type="text" id="nombre" ng-model="cliente.Nombre" name="Nombre">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-4" for="aPat">Ap. Paterno</label>
+                    <div class="col-sm-8">
+                        <input required maxlength="100" class="form-control input-sm" type="text" id="aPat" ng-model="cliente.ApellidoPat" name="ApellidoPat">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-4" for="aMat">Ap. Materno</label>
+                    <div class="col-sm-8">
+                        <input required maxlength="100" class="form-control input-sm" type="text" id="aMat" ng-model="cliente.ApellidoMat" name="ApellidoMat">
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label class="control-label col-sm-4" for="rfc">RFC</label>
+                    <div class="col-sm-8">
+                        <input maxlength="20" class="form-control input-sm" type="text" id="rfc" ng-model="cliente.RFC">
+                    </div>
+                </div>
+            </div>
+        </form>
+    </fieldset>
+        <h5>
+            DIRECCIONES
+        </h5>
+        <div class="col-sm-12">
+            <hr />
+            <form novalidate name="frmDirecciones">
+                <fieldset ng-disabled="clienteGuardado">
+                    <div class="table-responsive">
+                        <table class="table table-striped table-condensed">
+                            <thead>
+                                <th>¿Cobranza?</th>
+                                <th>Dirección</th>
+                                <th>Colonia</th>
+                                <th>Municipio</th>
+                                <th></th>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="domicilio in cliente.Domicilios">
+                                    <td>
+                                        <input name="cobranza" ng-model="IdDomicilioCobranza" type="radio" value="{{ $index }}" 
+                                            ng-click="establecerDomicilioCobranza($index);" required />
+                                    </td>
+                                    <td>{{ domicilio.Calle + " No. " + domicilio.NumeroExterior + 
+                                        (domicilio.NumeroInterior == null ? "" : 
+                                        " Int. " + domicilio.NumeroInterior) + "  entre " +
+                                        domicilio.EntreCalles }}</td>
+                                    <td>{{ domicilio.Colonia }}</td>
+                                    <td>{{ (todosMunicipios | filter: {ID: domicilio.IdMunicipio })[0].Nombre }}</td>
+                                    <td><a class="btn btn-default btn-xs" 
+                                        ng-click="eliminaDomicilio($index)">Quitar</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </fieldset>
+            </form>
+            <hr />
+        </div>
+        <form name="frmDomicilio" novalidate class="row">
+            <fieldset ng-disabled="clienteGuardado">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="calle">Calle</label>
+                        <div class="col-sm-10">
+                            <input maxlength="200" required class="form-control input-sm" type="text" id="calle" ng-model="domicilio.Calle" name="Calle">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="control-label col-sm-4" for="noExterior">No. Exterior</label>
+                        <div class="col-sm-8">
+                            <input min="1" required class="form-control input-sm" type="number" id="noExterior" ng-model="domicilio.NumeroExterior" name="NumeroExterior">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-4" for="noInterior">No. Interior</label>
+                        <div class="col-sm-8">
+                            <input maxlength="10" class="form-control input-sm" type="text" id="noInterior" ng-model="domicilio.NumeroInterior" name="NumeroInterior">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="control-label col-sm-4" for="Estado">Estado</label>
+                        <div class="col-sm-8">
+                            <!--<select name="estado" id="estado" class="form-control"></select>-->
+                            <select class="form-control input-sm" 
+                                name="IdEstado" id="IdEstado" ng-model="IdEstado" 
+                                ng-change="obtenerMunicipios(IdEstado)">
+                                <option ng-repeat="estado in estados" value="{{ estado.ID }}">{{ estado.Nombre }}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-4" for="IdMunicipio">Municipio</label>
+                        <div class="col-sm-8">
+                            <!--<select required name="Municipio" id="municipio" class="form-control"></select>-->
+                            <select class="form-control input-sm" required
+                                name="IdMunicipio" id="IdMunicipio" ng-model="domicilio.IdMunicipio">
+                                <option ng-repeat="municipio in municipios" value="{{ municipio.ID }}">{{ municipio.Nombre }}</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="control-label col-sm-4" for="CodigoPostal">Código Postal</label>
+                        <div class="col-sm-8">
+                            <input required minlength="1" maxlength="10"  class="form-control input-sm" type="text" id="CodigoPostal" ng-model="domicilio.CodigoPostal" name="CodigoPostal">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="control-label col-sm-4" for="entreCalles">Entre Calles</label>
+                        <div class="col-sm-8">
+                            <input class="form-control input-sm" type="text" id="entreCalles" ng-model="domicilio.EntreCalles" name="EntreCalles">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-8">
+                    <div class="form-group">
+                        <label class="control-label col-sm-3" for="colonia">Colonia</label>
+                        <div class="col-sm-9">
+                            <input maxlength="400" required class="form-control input-sm" type="text" id="colonia" ng-model="domicilio.Colonia" name="Colonia">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <button class="btn btn-default btn-sm" ng-click="agregarDomicilio(domicilio)" ng-disabled="frmDomicilio.$invalid">
+                                Agregar Domicilio
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+        <h5>
+            TELÉFONOS
+        </h5>
+        <div class="col-sm-12">
+            <hr />
+            <div class="table-responsive">
+                <table class="table table-striped table-condensed">
+                    <thead>
+                        <th>Teléfono</th>
+                        <th>Estensión</th>
+                        <th>Tipo</th>
+                        <th></th>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="telefono in cliente.Telefonos">
+                            <td>{{ telefono.NoTelefono }}</td>
+                            <td>{{ telefono.Extension }}</td>
+                            <td>{{ (tipostelefonos | filter: {ID: telefono.IdTipoTelefono })[0].Nombre }}</td>
+                            <td><a class="btn btn-default btn-xs" 
+                                ng-click="eliminaTelefono($index)">Quitar</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <hr />
+        </div>
+        <form name="frmTelefono" novalidate class="row">
+            <fieldset ng-disabled="clienteGuardado">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="control-label col-sm-4" for="NoTelefono">Teléfono</label>
+                        <div class="col-sm-8">
+                            <input minlength="10" maxlength="10" required class="form-control input-sm" type="tel" id="NoTelefono" ng-model="telefono.NoTelefono">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-4" for="extension">Extensión</label>
+                        <div class="col-sm-8">
+                            <input maxlength="5" class="form-control input-sm" type="tel" id="extension" ng-model="telefono.Extension">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="control-label col-sm-4" for="TipoTelefono">Tipo Tel.</label>
+                        <div class="col-sm-8">
+                            <select class="form-control input-sm" required
+                                name="IdTipoTelefono" id="IdTipoTelefono" ng-model="telefono.IdTipoTelefono">
+                                <option ng-repeat="tipo in tipostelefonos" value="{{ tipo.ID }}">{{ tipo.Nombre }}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-4 col-sm-8">
+                            <button class="btn btn-default btn-sm" ng-click="agregarTelefono(telefono)" ng-disabled="frmTelefono.$invalid">
+                                Agregar Teléfono
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="form-group">
+                <div class="col-sm-offset-8 col-sm-4">
+                    <button class="btn btn-default" 
+                        ng-disabled="clienteGuardado || (frmDirecciones.$invalid || frmCliente.$invalid || cliente.Domicilios.length < 1 || cliente.Telefonos.length < 1)"
+                        ng-click="guardarCliente(cliente)">
+                        Guardar Nuevo Cliente
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

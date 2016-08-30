@@ -1,0 +1,15 @@
+<p>
+    <h4>Solicitud de Servicio Funerario</h4>
+</p>
+<ul class="nav nav-tabs">
+  <li role="presentation" ng-class="{active:$state.includes('servicios.nuevo.cliente')}">
+      <a ui-sref="servicios.nuevo.cliente">Cliente</a>
+  </li>
+  <li role="presentation">
+      <a ui-sref="servicios.nuevo.paquete">Paquete Funerario</a>
+  </li>
+  <li role="presentation">
+      <a ui-sref="#">Contrato</a>
+  </li>
+</ul>
+<div class="col-sm-12" ui-view></div>

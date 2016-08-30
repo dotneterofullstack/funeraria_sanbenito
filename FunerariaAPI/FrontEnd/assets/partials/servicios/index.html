@@ -1,0 +1,66 @@
+<div class="page-header">
+    <h3>Servicios Funerarios</h3>
+</div>
+<div class="col-sm-3">
+    <p>SERVICIOS</p>
+     <ul class="nav nav-pills nav-stacked">
+        <!--<li ng-class="{active:$state.includes('paquetes.listado')}">
+            <a ui-sref="paquetes.listado">Paquetes</a>
+        </li>-->
+        <li ng-class="{active:$state.includes('servicios.nuevo')}">
+            <a ui-sref="servicios.nuevo.cliente">Nuevo</a>
+        </li>
+    </ul>
+    <hr>
+    <p>CATALOGOS</p>
+    <ul class="nav nav-pills nav-stacked">
+        <!--<li ng-class="{active:$state.includes('Asesores')}">
+            <a ui-sref="servicios.nuevo.cliente">Asesores</a>
+        </li>-->
+        
+        <li role="presentation" class="dropdown" ng-class="{active:$state.includes('servicios.cargos')}">
+            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+            Cargos del Personal <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                    <a ui-sref="servicios.cargos.nuevo">Nuevo</a>
+                </li>
+                <li>
+                    <a ui-sref="servicios.cargos.listado">Listado</a>
+                </li>
+            </ul>
+        </li>
+        
+        <li role="presentation" class="dropdown" ng-class="{active:$state.includes('servicios.asesores')}">
+            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+            Asesores <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                    <a ui-sref="servicios.asesores.nuevo">Nuevo</a>
+                </li>
+                <li>
+                    <a ui-sref="servicios.asesores.listado">Listado</a>
+                </li>
+            </ul>
+        </li>
+
+        <li role="presentation" class="dropdown" ng-class="{active:$state.includes('servicios.clientes')}">
+            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+            Clientes <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                    <a ui-sref="servicios.clientes.nuevo">Nuevo</a>
+                </li>
+                <li>
+                    <a ui-sref="servicios.clientes.listado">Listado</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>
+<div class="col-sm-9">
+    <div class="col-sm-12" ui-view></div>
+</div>

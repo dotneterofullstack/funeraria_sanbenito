@@ -1,0 +1,28 @@
+<p>
+    <h4>Listado</h4>
+</p>
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Descripcion</th>
+                <th>Solo Cremación</th>
+                <th>Precio</th>
+                <th>Comisión</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="paquete in paquetes">
+                <td>{{ paquete.Descripcion }}</td>
+                <td>{{ paquete.SoloCremacion ? "Si" : "No" }}</td>
+                <td>{{ paquete.Precio | currency : "$" : 2 }}</td>
+                <td>{{ paquete.Comision | currency : "$" : 2 }}</td>
+                <td>
+                    <a ui-sref="paquetes.info({id: paquete.ID})" class="btn btn-default btn-xs">Info</a>
+                    <a ui-sref="paquetes.editar({id: paquete.ID})" class="btn btn-default btn-xs">Editar</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

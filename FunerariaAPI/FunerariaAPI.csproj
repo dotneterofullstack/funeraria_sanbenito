@@ -117,6 +117,51 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="FrontEnd\assets\css\bootstrap-theme.css" />
+    <Content Include="FrontEnd\assets\css\bootstrap.css" />
+    <Content Include="FrontEnd\assets\css\style.css" />
+    <Content Include="FrontEnd\assets\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="FrontEnd\assets\js\angular-ui-router.js" />
+    <Content Include="FrontEnd\assets\js\angular.js" />
+    <Content Include="FrontEnd\assets\js\app.js" />
+    <Content Include="FrontEnd\assets\js\bootstrap.js" />
+    <Content Include="FrontEnd\assets\js\jquery.js" />
+    <Content Include="FrontEnd\assets\js\modulos\asesores\controllers.js" />
+    <Content Include="FrontEnd\assets\js\modulos\asesores\services.js" />
+    <Content Include="FrontEnd\assets\js\modulos\cargos\controllers.js" />
+    <Content Include="FrontEnd\assets\js\modulos\cargos\services.js" />
+    <Content Include="FrontEnd\assets\js\modulos\clientes\controllers.js" />
+    <Content Include="FrontEnd\assets\js\modulos\clientes\services.js" />
+    <Content Include="FrontEnd\assets\js\modulos\documentos\services.js" />
+    <Content Include="FrontEnd\assets\js\modulos\domicilios\services.js" />
+    <Content Include="FrontEnd\assets\js\modulos\estados\services.js" />
+    <Content Include="FrontEnd\assets\js\modulos\paquetes\controllers.js" />
+    <Content Include="FrontEnd\assets\js\modulos\paquetes\services.js" />
+    <Content Include="FrontEnd\assets\js\modulos\servicios\controllers.js" />
+    <Content Include="FrontEnd\assets\js\modulos\servicios\services.js" />
+    <Content Include="FrontEnd\assets\js\modulos\telefonos\services.js" />
+    <Content Include="FrontEnd\assets\js\modulos\TiposTelefonos\services.js" />
+    <Content Include="FrontEnd\assets\partials\asesores\agregar.html" />
+    <Content Include="FrontEnd\assets\partials\asesores\index.html" />
+    <Content Include="FrontEnd\assets\partials\asesores\info.html" />
+    <Content Include="FrontEnd\assets\partials\asesores\listado.html" />
+    <Content Include="FrontEnd\assets\partials\cargos\agregar.html" />
+    <Content Include="FrontEnd\assets\partials\cargos\index.html" />
+    <Content Include="FrontEnd\assets\partials\cargos\listado.html" />
+    <Content Include="FrontEnd\assets\partials\clientes\agregar.html" />
+    <Content Include="FrontEnd\assets\partials\clientes\index.html" />
+    <Content Include="FrontEnd\assets\partials\clientes\info.html" />
+    <Content Include="FrontEnd\assets\partials\clientes\listado.html" />
+    <Content Include="FrontEnd\assets\partials\paquetes\agregar.html" />
+    <Content Include="FrontEnd\assets\partials\paquetes\editar.html" />
+    <Content Include="FrontEnd\assets\partials\paquetes\index.html" />
+    <Content Include="FrontEnd\assets\partials\paquetes\info.html" />
+    <Content Include="FrontEnd\assets\partials\paquetes\listado.html" />
+    <Content Include="FrontEnd\assets\partials\servicios\agregar.cliente.html" />
+    <Content Include="FrontEnd\assets\partials\servicios\agregar.html" />
+    <Content Include="FrontEnd\assets\partials\servicios\agregar.paquete.html" />
+    <Content Include="FrontEnd\assets\partials\servicios\index.html" />
+    <Content Include="FrontEnd\index.html" />
     <Content Include="Global.asax" />
     <Content Include="scripts\ai.0.15.0-build58334.js" />
     <Content Include="scripts\ai.0.15.0-build58334.min.js" />
@@ -151,6 +196,10 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="FrontEnd\assets\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="FrontEnd\assets\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="FrontEnd\assets\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="FrontEnd\assets\fonts\glyphicons-halflings-regular.woff2" />
     <None Include="Properties\PublishProfiles\Local.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

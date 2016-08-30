@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Recinto Funeral San Benito</title>
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+        <link href="assets/css/bootstrap.css" rel="stylesheet"/>
+        <link href="assets/css/bootstrap-theme.css" rel="stylesheet"/>
+        <link href="assets/css/style.css" rel="stylesheet"/>
+        <script type="text/javascript" src="assets/js/jquery.js"></script>
+        <script type="text/javascript" src="assets/js/bootstrap.js"></script>
+        <script src="assets/js/angular.js"></script>
+        <script src="assets/js/angular-ui-router.js"></script>
+        <script src="assets/js/app.js"></script>
+        
+        <!---- TIPOS TELEFONOS ---->
+        <script src="assets/js/modulos/TiposTelefonos/services.js"></script>
+        
+        <!---- PAQUETES ---->
+        <script src="assets/js/modulos/paquetes/services.js"></script>
+        <script src="assets/js/modulos/paquetes/controllers.js"></script>
+        
+        <!---- ESTADOS ---->
+        <script src="assets/js/modulos/estados/services.js"></script>
+        
+        <!---- DOMICILIOS ---->
+        <script src="assets/js/modulos/domicilios/services.js"></script>
+        
+        <!---- TELEFONOS ---->
+        <script src="assets/js/modulos/telefonos/services.js"></script>
+        
+        <!---- SERVICIOS FUNERARIOS ---->
+        <script src="assets/js/modulos/servicios/controllers.js"></script>
+        <script src="assets/js/modulos/servicios/services.js"></script>
+        
+        <!-- DOCUMENTOS -->
+        <script src="assets/js/modulos/documentos/services.js"></script>
+        
+        <!---- Cargos ---->
+        <script src="assets/js/modulos/cargos/services.js"></script>
+        <script src="assets/js/modulos/cargos/controllers.js"></script>
+        
+        <!-- ASESORES -->
+        <script src="assets/js/modulos/asesores/controllers.js"></script>
+        <script src="assets/js/modulos/asesores/services.js"></script>
+
+        <!-- CLIENTES -->
+        <script src="assets/js/modulos/clientes/controllers.js"></script>
+        <script src="assets/js/modulos/clientes/services.js"></script>
+    </head>
+    <body ng-app="funerariaApp" ng-controller="mainController">
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button class="navbar-toggle" type="button"
+                        data-toggle="collapse" data-target="#nav-toggle">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="#/" class="navbar-brand">Recinto Funeral San Benito</a>
+                </div>
+                <div class="collapse navbar-collapse" id="nav-toggle">
+                    <ul class="nav navbar-nav">
+                        <li ng-class="{active:$state.includes('paquetes')}">
+                            <a ui-sref="paquetes.listado">Paquetes Funerarios</a>
+                        </li>
+                        <li ng-class="{active:$state.includes('servicios')}">
+                            <a ui-sref="servicios.nuevo.cliente">Servicios Funerarios</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+            <div ui-view></div>
+        </div>
+    </body>
+</html>
