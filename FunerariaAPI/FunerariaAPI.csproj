@@ -193,9 +193,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
-    <Content Include="ApplicationInsights.config">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="FrontEnd\assets\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="FrontEnd\assets\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="FrontEnd\assets\fonts\glyphicons-halflings-regular.woff" />

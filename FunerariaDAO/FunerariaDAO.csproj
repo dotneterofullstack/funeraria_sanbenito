@@ -73,6 +73,7 @@
     <Compile Include="Models\PropietarioTelefonoEnum.cs" />
     <Compile Include="Models\RelacionAsesoresDocumentos.cs" />
     <Compile Include="Models\RelacionAsesoresDocumentosFilter.cs" />
+    <Compile Include="Models\ServicioFunerario.cs" />
     <Compile Include="Models\Telefono.cs" />
     <Compile Include="Models\TelefonoFilter.cs" />
     <Compile Include="Models\TipoTelefono.cs" />
