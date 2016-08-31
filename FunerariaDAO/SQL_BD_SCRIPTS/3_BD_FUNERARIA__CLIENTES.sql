@@ -88,10 +88,10 @@ create table Frecuencia_abonos (
 )
 go
 
--- use funeraria
--- go
--- insert into Paquetes_servicio values
--- ('Ata�d Met�lico Modelo Imperial', 12500, 1000, 0),
--- ('Ata�d madera Italia Tapa plana', 16500, 1500, 0),
--- ('Ata�d madera Americano', 23000, 2000, 0)
--- go
+ use funeraria
+ go
+ insert into Frecuencia_abonos values 
+ ('Semanal', 7, 1),
+ ('Quincenal', 14, 1),
+ ('Mensual', 30, 1)
+ go

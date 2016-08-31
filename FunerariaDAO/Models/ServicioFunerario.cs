@@ -17,5 +17,9 @@ namespace Funeraria.DAL.Models
         public string NumeroContrato { get; set; }
         public string NumeroSolicitud{ get; set; }
         public decimal Costo { get; set; }
+        public string TitularSustituto { get; set; }
+        public int IdFrecuenciaAbonos { get; set; }
+        public bool ServicioYaProporcionado { get; set; }
+        public EstatusCobranzaServicioFunerario EstatusCobranza { get; set; }
     }
 }

@@ -63,11 +63,13 @@
     <Compile Include="Models\Domicilio.cs" />
     <Compile Include="Models\DomicilioFilter.cs" />
     <Compile Include="Models\Estado.cs" />
+    <Compile Include="Models\EstatusServicioFunerario.cs" />
     <Compile Include="Models\FrecuenciaAbono.cs" />
     <Compile Include="Models\IFilter.cs" />
     <Compile Include="Models\IModel.cs" />
     <Compile Include="Models\Municipio.cs" />
     <Compile Include="Models\MunicipioFilter.cs" />
+    <Compile Include="Models\PagoServicioFunerario.cs" />
     <Compile Include="Models\PaqueteServicio.cs" />
     <Compile Include="Models\PaqueteServicioFilter.cs" />
     <Compile Include="Models\PropietarioTelefonoEnum.cs" />
@@ -76,9 +78,11 @@
     <Compile Include="Models\ServicioFunerario.cs" />
     <Compile Include="Models\Telefono.cs" />
     <Compile Include="Models\TelefonoFilter.cs" />
+    <Compile Include="Models\TipoPagoServicioFunerario.cs" />
     <Compile Include="Models\TipoTelefono.cs" />
     <Compile Include="Models\TipoTelefonoFilter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Content Include="SQL_BD_SCRIPTS\8_FUNERARIA_STORED_PROC_SERVICIOS_FUNERARIOS..sql" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="SQL_BD_SCRIPTS\1_BD_FUNERARIA_ESTADOS_MUNICIPIOS_CON_DATOS.sql" />
@@ -87,6 +91,7 @@
     <Content Include="SQL_BD_SCRIPTS\4_BD_FUNERARIA__STORED_PROC_CLIENTES.sql" />
     <Content Include="SQL_BD_SCRIPTS\5_BD_FUNERARIA__ASESORES.sql" />
     <Content Include="SQL_BD_SCRIPTS\6_BD_FUNERARIA__STORED_PROC_ASESORES.sql" />
+    <Content Include="SQL_BD_SCRIPTS\7_BD_FUNERARIA_SERVICIOS__FUNERARIOS.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
