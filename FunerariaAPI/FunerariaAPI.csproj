@@ -181,6 +181,7 @@
     <Compile Include="Controllers\MunicipiosController.cs" />
     <Compile Include="Controllers\PaquetesServiciosController.cs" />
     <Compile Include="Controllers\RelacionAsesoresDocumentosController.cs" />
+    <Compile Include="Controllers\ServiciosFunerariosController.cs" />
     <Compile Include="Controllers\TelefonosController.cs" />
     <Compile Include="Controllers\TiposTelefonosController.cs" />
     <Compile Include="Filters\ValidateModelAttribute.cs" />

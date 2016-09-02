@@ -52,6 +52,7 @@
     <Compile Include="DAO\MunicipioDAO.cs" />
     <Compile Include="DAO\PaqueteServicioDAO.cs" />
     <Compile Include="DAO\RelacionAsesoresDocumentosDAO.cs" />
+    <Compile Include="DAO\ServicioFunerarioDAO.cs" />
     <Compile Include="DAO\TelefonosDAO.cs" />
     <Compile Include="DAO\TipoTelefonoDAO.cs" />
     <Compile Include="Models\Asesor.cs" />
@@ -63,7 +64,7 @@
     <Compile Include="Models\Domicilio.cs" />
     <Compile Include="Models\DomicilioFilter.cs" />
     <Compile Include="Models\Estado.cs" />
-    <Compile Include="Models\EstatusServicioFunerario.cs" />
+    <Compile Include="Models\EstatusCobranzaServicioFunerario.cs" />
     <Compile Include="Models\FrecuenciaAbono.cs" />
     <Compile Include="Models\IFilter.cs" />
     <Compile Include="Models\IModel.cs" />
