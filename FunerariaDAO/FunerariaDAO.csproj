@@ -91,6 +91,7 @@
     <Content Include="SQL_BD_SCRIPTS\5_BD_FUNERARIA__ASESORES.sql" />
     <Content Include="SQL_BD_SCRIPTS\6_BD_FUNERARIA__STORED_PROC_ASESORES.sql" />
     <Content Include="SQL_BD_SCRIPTS\7_BD_FUNERARIA_SERVICIOS__FUNERARIOS.sql" />
+    <Content Include="SQL_BD_SCRIPTS\8_BD_FUNERARIA_STORED_PROC_SERVICIOS_FUNERARIOS.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

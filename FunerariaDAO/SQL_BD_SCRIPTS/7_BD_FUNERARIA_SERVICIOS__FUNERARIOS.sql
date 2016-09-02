@@ -37,11 +37,11 @@ create table ServiciosFunerarios (
 	IdCliente					int				not null,
 	IdDomicilioCobranza			int				not null,
 	FechaSolicitud				datetime		not null,
-	FechaContrato				datetime		null,
+	FechaContrato				datetime		NOT null,
 	NumeroSolicitud				VARCHAR(10)		NOT NULL	UNIQUE,
 	NumeroContrato				VARCHAR(10)		NOT NULL	UNIQUE,
 	Costo						DECIMAL(9,2)	NOT NULL,
-	TitularSustituto			VARCHAR(500)	NOT NULL,
+	TitularSustituto			VARCHAR(500)	NULL,
 	IdFrecuenciaAbonos			int				not null,
 	ServicioYaProporcionado		BIT				NOT NULL	DEFAULT 0,
 	IdEstatusCobranza			int				not null,
@@ -53,4 +53,23 @@ create table ServiciosFunerarios (
 	FOREIGN KEY(IdFrecuenciaAbonos)		REFERENCES Frecuencia_abonos(ID),
 	FOREIGN KEY(IdEstatusCobranza)		REFERENCES EstatusCobranzaServicio(ID),
 )
+go
+
+use funeraria
+go
+create procedure sp_select_EstatusCobranzaServicio
+as begin
+	select ID, Estatus from funeraria..EstatusCobranzaServicio
+end
+go
+
+use funeraria
+go
+create procedure sp_select_TiposPagoServicio
+as begin
+	select ID, TipoPago from funeraria..EstatusCobranzaServicio
+end
+go
+
+use funeraria
 go
