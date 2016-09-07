@@ -48,21 +48,21 @@
             
             .state('servicios.nuevo', {
                 url: "/nuevo",
-                abstract: true,
                 templateUrl: "assets/partials/servicios/agregar.html",
+                controller: "nuevoServicioController"
             })
             
-            .state('servicios.nuevo.cliente', {
-                url: "",
-                templateUrl: "assets/partials/servicios/agregar.cliente.html",
-                controller: "nuevoClienteController"
-            })
+            //.state('servicios.nuevo.cliente', {
+            //    url: "",
+            //    templateUrl: "assets/partials/servicios/agregar.cliente.html",
+            //    controller: "nuevoClienteController"
+            //})
 
-            .state('servicios.nuevo.paquete', {
-                url: "",
-                templateUrl: "assets/partials/servicios/agregar.paquete.html",
-                controller: "nuevoPaqueteController"
-            })
+            //.state('servicios.nuevo.paquete', {
+            //    url: "",
+            //    templateUrl: "assets/partials/servicios/agregar.paquete.html",
+            //    controller: "nuevoPaqueteController"
+            //})
             
             // -- RUTAS PARA CATALOGO DE ASESORES -- 
             .state('servicios.asesores', {

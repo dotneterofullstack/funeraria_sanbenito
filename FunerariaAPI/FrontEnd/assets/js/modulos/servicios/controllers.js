@@ -9,6 +9,46 @@
         init();
     })
 
+    .controller("nuevoServicioController", function ($scope, servicios, asesores, clientes, paquetes) {
+        function init() {
+            servicios.init();
+
+            $scope.asesor = {
+                ID: 0,
+                IdPaquete: 0,
+                IdAsesor: 0,
+                IdCliente: 0,
+                IdDomicilioCobranza: 0,
+                NumeroContrato: '',
+                NumeroSolicitud: '',
+                Costo: 0,
+                IdFrecuenciaAbonos: 0,
+                ServicioYaProporcionado: false,
+                EstatusCobranza: 0
+            };
+
+            asesores.get().then(function (response) {
+                $scope.asesores = response.data;
+            }, function (errorResponse) {
+
+            });
+
+            clientes.get().then(function (response) {
+                $scope.clientes = response.data;
+            }, function (errorResponse) {
+
+            });
+
+            paquetes.get().then(function (response) {
+                $scope.paquetes = response.data;
+            }, function (errorResponse) {
+
+            });
+        }
+
+        init();
+    })
+
     .controller("nuevoPaqueteController", function($scope, servicios) {
         function init() {
             
