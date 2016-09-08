@@ -135,6 +135,7 @@
     <Content Include="FrontEnd\assets\js\modulos\documentos\services.js" />
     <Content Include="FrontEnd\assets\js\modulos\domicilios\services.js" />
     <Content Include="FrontEnd\assets\js\modulos\estados\services.js" />
+    <Content Include="FrontEnd\assets\js\modulos\frecuenciaAbonos\services.js" />
     <Content Include="FrontEnd\assets\js\modulos\paquetes\controllers.js" />
     <Content Include="FrontEnd\assets\js\modulos\paquetes\services.js" />
     <Content Include="FrontEnd\assets\js\modulos\servicios\controllers.js" />
@@ -183,6 +184,7 @@
     <Compile Include="Controllers\RelacionAsesoresDocumentosController.cs" />
     <Compile Include="Controllers\ServiciosFunerariosController.cs" />
     <Compile Include="Controllers\TelefonosController.cs" />
+    <Compile Include="Controllers\TiposPagosServicioFunerarioController.cs" />
     <Compile Include="Controllers\TiposTelefonosController.cs" />
     <Compile Include="Filters\ValidateModelAttribute.cs" />
     <Compile Include="Global.asax.cs">

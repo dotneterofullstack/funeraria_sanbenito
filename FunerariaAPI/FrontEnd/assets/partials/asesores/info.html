@@ -72,9 +72,11 @@
         <div class="table-responsive">
             <table class="table table-striped table-condensed">
                 <thead>
-                    <th>Dirección</th>
-                    <th>Colonia</th>
-                    <th>Municipio</th>
+                    <tr>
+                        <th>Dirección</th>
+                        <th>Colonia</th>
+                        <th>Municipio</th>
+                    </tr>
                 </thead>
                 <tbody>
                     <tr ng-repeat="domicilio in asesor.Domicilios">
@@ -98,9 +100,11 @@
         <div class="table-responsive">
             <table class="table table-striped table-condensed">
                 <thead>
-                    <th>Teléfono</th>
-                    <th>Estensión</th>
-                    <th>Tipo</th>
+                    <tr>
+                        <th>Teléfono</th>
+                        <th>Estensión</th>
+                        <th>Tipo</th>
+                    </tr>
                 </thead>
                 <tbody>
                     <tr ng-repeat="telefono in asesor.Telefonos">
@@ -121,7 +125,11 @@
         <div class="table-responsive">
             <table class="table table-striped table-condensed">
                 <thead>
-                    <th>Documento</th>
+                    <tr>
+                        <tr>
+                            <th>Documento</th>
+                        </tr>
+                    </tr>
                 </thead>
                 <tbody>
                     <tr ng-repeat="relacion in asesor.RelacionAsesoresDocumentos">

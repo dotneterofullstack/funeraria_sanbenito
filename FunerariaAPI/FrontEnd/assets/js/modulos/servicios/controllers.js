@@ -9,7 +9,7 @@
         init();
     })
 
-    .controller("nuevoServicioController", function ($scope, servicios, asesores, clientes, paquetes) {
+    .controller("nuevoServicioController", function ($scope, servicios, asesores, clientes, paquetes, frecuenciaAbonos) {
         function init() {
             servicios.init();
 
@@ -41,6 +41,20 @@
 
             paquetes.get().then(function (response) {
                 $scope.paquetes = response.data;
+            }, function (errorResponse) {
+
+            });
+
+            frecuenciaAbonos.get().then(function (response) {
+                $scope.frecuencias = response.data;
+            }, function (errorResponse) {
+
+            });
+        }
+
+        $scope.obtenerDomiciliosCliente = function (idCliente) {
+            domicilios.get(idCliente, 1).then(function (response) {
+                $scope.domicilios = response.data;
             }, function (errorResponse) {
 
             });
