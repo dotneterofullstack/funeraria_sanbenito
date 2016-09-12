@@ -9,7 +9,7 @@
         init();
     })
 
-    .controller("nuevoServicioController", function ($scope, servicios, asesores, clientes, paquetes, frecuenciaAbonos) {
+    .controller("nuevoServicioController", function ($scope, servicios, asesores, clientes, paquetes, frecuenciaAbonos, domicilios) {
         function init() {
             servicios.init();
 

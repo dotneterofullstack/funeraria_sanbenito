@@ -18,6 +18,14 @@ create table TipoTelefono (
 go
 
 use funeraria
+go 
+insert into TipoTelefono values
+('Casa'),
+('Celular'),
+('Trabajo')
+go
+
+use funeraria
 go
 create table Telefonos (
 	ID				INT				NOT NULL	PRIMARY KEY	IDENTITY(1, 1),

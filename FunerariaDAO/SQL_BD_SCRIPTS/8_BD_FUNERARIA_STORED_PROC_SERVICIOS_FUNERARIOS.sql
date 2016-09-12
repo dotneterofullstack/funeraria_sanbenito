@@ -1,4 +1,6 @@
-﻿create procedure sp_select_ServiciosFunerarios(
+﻿USE FUNERARIA
+GO
+create procedure sp_select_ServiciosFunerarios(
 	@ID							int = 0,		
 	@IdPaquete					int = 0,		
 	@IdAsesor					int = 0,		
@@ -61,9 +63,8 @@ create procedure guardar_servicioFunerario (
 ) as begin
 	if @ID = 0
 	BEGIN
-		INSERT INTO ServiciosFunerarios VALUES(
-			 @ID						
-			,@IdPaquete					
+		INSERT INTO ServiciosFunerarios VALUES(					
+			 @IdPaquete					
 			,@IdAsesor					
 			,@IdCliente					
 			,@IdDomicilioCobranza		

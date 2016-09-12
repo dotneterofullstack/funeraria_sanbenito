@@ -67,7 +67,7 @@ use funeraria
 go
 create procedure sp_select_TiposPagoServicio
 as begin
-	select ID, TipoPago from funeraria..EstatusCobranzaServicio
+	select ID, TipoPago from funeraria..TiposPagoServicio
 end
 go
 
