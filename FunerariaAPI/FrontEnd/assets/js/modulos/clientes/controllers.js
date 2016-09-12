@@ -18,13 +18,13 @@
                 
             });
             
-            domicilios.get($stateParams.idCliente, 1).then(function(response){
+            domicilios.get($stateParams.idCliente, 2).then(function(response){
                 $scope.cliente.Domicilios = response.data;
             }, function(errorResponse){
                 
             });
             
-            telefonos.get($stateParams.idCliente, 1).then(function(response){
+            telefonos.get($stateParams.idCliente, 2).then(function(response){
                 $scope.cliente.Telefonos = response.data;
             }, function(errorResponse){
                 
