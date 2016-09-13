@@ -11,7 +11,7 @@ create procedure seleccionar_telefonos_cliente (
 	SELECT [ID]
 		  ,[IdTipoTelefono]
 		  ,[Telefono]
-		  ,[Extension]
+		  ,isnull(Extension, '') as Extension
 	FROM [dbo].[Telefonos]
 	INNER JOIN idTelefonos ON ID = idTelefonos.IdTelefono
 end
@@ -31,12 +31,12 @@ create procedure seleccionar_domicilios_cliente (
 		  ,[IdMunicipio]
 		  ,[Calle]
 		  ,[NumeroExterior]
-		  ,[NumeroInterior]
+		  ,isnull(NumeroInterior, '') as NumeroInterior
 		  ,[Colonia]
 		  ,[CodigoPostal]
-		  ,[EntreCalles]
-		  ,[Latitud]
-		  ,[Longitud]
+		  ,isnull(EntreCalles, '') as EntreCalles
+		  ,isnull(Latitud, '') as Latitud
+		  ,isnull(Longitud, '') as Longitud
 	FROM [dbo].[Domicilios]
 	INNER JOIN idDomicilios ON ID = IdDomicilio
 end
