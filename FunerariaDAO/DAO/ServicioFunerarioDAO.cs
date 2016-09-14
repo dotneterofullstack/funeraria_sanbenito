@@ -103,7 +103,7 @@ namespace Funeraria.DAL.DAO
                     ServicioYaProporcionado.Direction = ParameterDirection.Input;
 
                     SqlParameter IdEstatusCobranza = new SqlParameter("@IdEstatusCobranza", SqlDbType.Int);
-                    IdEstatusCobranza.Value = servicioFunerario.EstatusCobranza;
+                    IdEstatusCobranza.Value = (int)servicioFunerario.EstatusCobranza;
                     IdEstatusCobranza.Direction = ParameterDirection.Input;
 
                     SqlParameter retval = new SqlParameter(RET_VAL_PARAM_NAME, SqlDbType.Int);

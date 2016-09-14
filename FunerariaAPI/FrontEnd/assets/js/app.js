@@ -1,5 +1,5 @@
 (function() {
-    angular.module("funerariaApp", ["ui.router"])
+    angular.module("funerariaApp", ["ui.router", 'angular-date-picker-polyfill'])
     
     .config(function($stateProvider, $urlRouterProvider) {
         
@@ -136,7 +136,6 @@
     
     .run(function($rootScope) {
         // Crear configuración global
-        
         $rootScope.Configuracion = {
              // RutaApi: "http://192.168.1.68:5000//api/"
             RutaApi: "http://localhost:50038/api/"

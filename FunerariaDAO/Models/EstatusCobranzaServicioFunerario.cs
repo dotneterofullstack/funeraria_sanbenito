@@ -8,8 +8,8 @@ namespace Funeraria.DAL.Models
 {
     public enum EstatusCobranzaServicioFunerario
     {
-        Cancelado = 0,
-        EnProcesoDePago = 1,
-        PagoFiniquitado
+        Cancelado = 1,
+        EnProcesoDePago = 2,
+        PagoFiniquitado = 3
     }
 }

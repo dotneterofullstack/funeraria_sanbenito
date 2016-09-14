@@ -3,26 +3,24 @@
     
     .factory("servicios", function servicioFactory($rootScope, $http) {
         var apiUrl = $rootScope.Configuracion.RutaApi;
-        var nuevaSolicitudServicio = null;
         
         return {
-            init: function() {
-                nuevaSolicitudServicio = {
-                    Cliente: null,
-                    IdDomicilioCobro: 0
-                }
+            get: function () {
+                return $http.get(apiUrl + "/ServiciosFunerarios");
             },
 
-            existeCliente: function() {
-                return (!nuevaSolicitudServicio);
-            },
-            
-            setCliente: function(cliente) {
-                nuevaSolicitudServicio.Cliente = cliente;
+            set: function (servicio) {
+                return $http.post(apiUrl + "/ServiciosFunerarios", servicio);
             },
 
-            setDomicilioCobro: function(idDomicilio) {
-                nuevaSolicitudServicio.IdDomicilioCobro = idDomicilio;
+            find: function (idServicio) {
+                return $http.get(apiUrl + "/ServiciosFunerarios", {
+                    params: { "IdPaquete": idServicio }
+                });
+            },
+
+            delete: function (index) {
+
             }
         };
     })

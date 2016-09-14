@@ -117,10 +117,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="FrontEnd\assets\css\angular-date-picker-polyfill-basic.css" />
     <Content Include="FrontEnd\assets\css\bootstrap-theme.css" />
     <Content Include="FrontEnd\assets\css\bootstrap.css" />
     <Content Include="FrontEnd\assets\css\style.css" />
     <Content Include="FrontEnd\assets\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="FrontEnd\assets\js\angular-date-picker-polyfill.js" />
     <Content Include="FrontEnd\assets\js\angular-ui-router.js" />
     <Content Include="FrontEnd\assets\js\angular.js" />
     <Content Include="FrontEnd\assets\js\app.js" />

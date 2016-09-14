@@ -3,7 +3,7 @@
 
     .controller("servicioController", function($scope, servicios) {
         function init() {
-            servicios.init();
+
         }
 
         init();
@@ -11,9 +11,8 @@
 
     .controller("nuevoServicioController", function ($scope, servicios, asesores, clientes, paquetes, frecuenciaAbonos, domicilios) {
         function init() {
-            servicios.init();
-
-            $scope.asesor = {
+            //servicios.init();
+            $scope.servicio = {
                 ID: 0,
                 IdPaquete: 0,
                 IdAsesor: 0,
@@ -24,8 +23,10 @@
                 Costo: 0,
                 IdFrecuenciaAbonos: 0,
                 ServicioYaProporcionado: false,
-                EstatusCobranza: 0
+                EstatusCobranza: 2
             };
+
+            $scope.paqueteSeleccionado = {};
 
             asesores.get().then(function (response) {
                 $scope.asesores = response.data;
@@ -52,8 +53,32 @@
             });
         }
 
+        $scope.establecerIdPaquete = function () {
+            $scope.servicio.IdPaquete = $scope.paqueteSeleccionado.ID;
+            $scope.servicio.Costo = $scope.paqueteSeleccionado.Precio;
+        }
+
+        $scope.guardarServicio = function (servicio) {
+            var nuevoServicio = angular.copy(servicio);
+
+            servicios.set(nuevoServicio).then(
+                function (response) {
+                    $scope.fracasoGuardado = false;
+                    $scope.exitoGuardado = true;
+                    $scope.nuevoId = response.data.ID;
+                    init();
+                    $scope.frmServicio.$setPristine();
+                }, function (errorResponse) {
+                    $scope.exitoGuardado = false;
+                    $scope.fracasoGuardado = true;
+                    $scope.errorResponse = errorResponse.data;
+                    console.log(errorResponse.data.ModelState);
+                }
+            );
+        }
+
         $scope.obtenerDomiciliosCliente = function (idCliente) {
-            domicilios.get(idCliente, 1).then(function (response) {
+            domicilios.get(idCliente, 2).then(function (response) {
                 $scope.domicilios = response.data;
             }, function (errorResponse) {
 

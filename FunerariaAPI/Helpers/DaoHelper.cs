@@ -61,6 +61,10 @@ namespace Funeraria.API.Helpers
             {
                 dao = new CargosDAO();
             }
+            else if (type == typeof(ServicioFunerarioDAO))
+            {
+                dao = new ServicioFunerarioDAO();
+            }
             else
             {
                 throw new Exception("Tipo de Dao Desconocido: " + type.ToString());
