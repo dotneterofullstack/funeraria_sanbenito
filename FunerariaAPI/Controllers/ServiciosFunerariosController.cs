@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using System.Text;
 using System.Net.Http;
 using System.Web.Http;
 using Funeraria.DAL.DAO;
 using Funeraria.DAL.Models;
 using Funeraria.API.Helpers;
 using Funeraria.API.Filters;
+using Newtonsoft.Json.Linq;
 
 namespace Funeraria.API.Controllers
 {
@@ -19,32 +21,27 @@ namespace Funeraria.API.Controllers
             dao = DaoHelper.DaoFactory(typeof(ServicioFunerarioDAO));
         }
 
-        public IEnumerable<IModel> Get([FromUri]ServicioFunerario filter)
+        public HttpResponseMessage Get([FromUri]ServicioFunerario filter)
         {
-            IEnumerable<IModel> reldoc = null;
-
-            // Validar que esté solicitando un estado válido
-            if (filter.ID <= 0)
-            {
-                var response = new HttpResponseMessage()
-                {
-                    StatusCode = (HttpStatusCode)422, //Entidad Inprocesable
-                    ReasonPhrase = "Id de Servicio Funerario Invalido"
-                };
-
-                throw new HttpResponseException(response);
-            }
+            string jsonStringResults;
 
             try
             {
-                reldoc = dao.GetByFilter(filter);
+                jsonStringResults = dao.GetJsonByFilter(filter);
             }
             catch (Exception e)
             {
                 throw new HttpResponseException(HttpStatusCode.InternalServerError);
             }
+            HttpResponseMessage response = ConstruirHttpResponseMessageConJSON(jsonStringResults);
+            return response;
+        }
 
-            return reldoc;
+        private HttpResponseMessage ConstruirHttpResponseMessageConJSON(string jsonStringResults)
+        {
+            var response = new HttpResponseMessage();
+            response.Content = new StringContent(jsonStringResults, Encoding.UTF8, "application/json");
+            return response;
         }
 
         [ValidateModel]

@@ -58,13 +58,12 @@
         <script src="assets/js/modulos/clientes/controllers.js"></script>
         <script src="assets/js/modulos/clientes/services.js"></script>
 
-        <!-- Frecuencia de Pagos -->>
+        <!-- Frecuencia de Pagos -->
         <script src="assets/js/modulos/frecuenciaAbonos/services.js"></script>
-
     </head>
     <body ng-app="funerariaApp" ng-controller="mainController">
         <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-            <div class="container">
+            <div class="container-fluid">
                 <div class="navbar-header">
                     <button class="navbar-toggle" type="button"
                         data-toggle="collapse" data-target="#nav-toggle">
@@ -80,13 +79,13 @@
                             <a ui-sref="paquetes.listado">Paquetes Funerarios</a>
                         </li>
                         <li ng-class="{active:$state.includes('servicios')}">
-                            <a ui-sref="servicios.nuevo">Servicios Funerarios</a>
+                            <a ui-sref="servicios.listado">Servicios Funerarios</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
-        <div class="container">
+        <div class="container-fluid">
             <div ui-view></div>
         </div>
     </body>

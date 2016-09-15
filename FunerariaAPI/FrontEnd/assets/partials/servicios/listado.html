@@ -1,26 +1,36 @@
-<p>
-    <h4>Listado de Servicios Funerarios</h4>
-</p>
+<h4>Listado de Servicios Funerarios</h4>
 <div class="table-responsive">
     <table class="table table-striped">
         <thead>
             <tr>
-                <!--<th>Nombre</th>
-                <th>Apellido Paterno</th>
-                <th>Apellido Materno</th>
-                <th>R. F. C.</th>
-                <th>Acciones</th>-->
+                <th>Fecha Solicitud</th>
+                <th>Fecha Contrato</th>
+                <th>No. Solicitud</th>
+                <th>No. Contrato</th>
+                <th>Cliente</th>
+                <th>Asesor</th>
+                <th>Paquete</th>
+                <th>Costo</th>
+                <th>Frecuencia Abonos</th>
+                <th>Servicio proporcionado</th>
+                <th>Domicilio Cobranza</th>
+                <th>Estatus</th>
             </tr>
         </thead>
         <tbody>
             <tr ng-repeat="servicio in servicios">
-                <!--<td>{{ asesor.Nombre }}</td>
-                <td>{{ asesor.ApellidoPat }}</td>
-                <td>{{ asesor.ApellidoMat }}</td>
-                <td>{{ asesor.RFC }}</td>
-                <td>
-                    <a ui-sref="servicios.asesores.info({idAsesor: asesor.ID})" class="btn btn-default btn-xs">Info</a>
-                </td>-->
+                <td>{{ servicio.FechaSolicitud }}</td>
+                <td>{{ servicio.FechaContrato }}</td>
+                <td>{{ servicio.NumeroSolicitud }}</td>
+                <td>{{ servicio.NumeroContrato }}</td>
+                <td>{{ servicio.Cliente }}</td>
+                <td>{{ servicio.Asesor }}</td>
+                <td>{{ servicio.Paquete }}</td>
+                <td>{{ servicio.Costo }}<td>
+                <td>{{ servicio.FrecuenciaAbonos }}</td>
+                <td>{{ servicio.ServicioYaProporcionado }}</td>
+                <td>{{ servicio.Domicilio }}</td>
+                <td>{{ servicio.EstatusCobranza }}</td>
             </tr>
         </tbody>
     </table>

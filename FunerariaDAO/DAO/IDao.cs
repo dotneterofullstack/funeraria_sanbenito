@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Funeraria.DAL.Models;
+using Newtonsoft.Json;
 
 namespace Funeraria.DAL.DAO
 {
@@ -22,6 +23,39 @@ namespace Funeraria.DAL.DAO
 
         public string SqlConString { get; set; }
 
+        public virtual string GetJsonByFilter(IFilter filter)
+        {
+            string jsonString = string.Empty;
+            List<IModel> todos = null;
+            SqlCommand cmd = BuildCommand(SP_GETBYFILTER_STR);
+            SqlParameter[] parametros = BuildParameters(filter, SP_GETBYFILTER_STR);
+            cmd.Parameters.AddRange(parametros);
+
+            try
+            {
+                conn.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                DataTable dt = new DataTable();
+                dt.Load(dr);
+                todos = new List<IModel>();
+                jsonString = JsonConvert.SerializeObject(dt);
+                dr.Close();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                if (conn != null && conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                    conn.Dispose();
+                }
+            }
+
+            return jsonString;
+        }
         public virtual IEnumerable<IModel> GetByFilter(IFilter filter)
         {
             List<IModel> todos = null;

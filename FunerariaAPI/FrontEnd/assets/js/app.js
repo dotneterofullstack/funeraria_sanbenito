@@ -38,12 +38,19 @@
             })
             
             // -- RUTAS PARA SERVICIOS FUNERARIOS --
+
             
             .state('servicios', {
                 url: "/servicios",
                 abstract: true,
                 templateUrl: "assets/partials/servicios/index.html",
                 controller: "servicioController"
+            })
+
+            .state('servicios.listado', {
+                url: "",
+                templateUrl: "assets/partials/servicios/listado.html",
+                //controller: "listadoPaquetesCtl"
             })
             
             .state('servicios.nuevo', {

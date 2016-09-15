@@ -52,9 +52,23 @@ namespace Funeraria.DAL.Models
         public int IdFrecuenciaAbonos { get; set; }
 
         [Required(ErrorMessage = "Defina si el servicio ya ha sido proporcionado")]
-        public bool ServicioYaProporcionado { get; set; }
+        public bool? ServicioYaProporcionado { get; set; }
 
         [Required(ErrorMessage = "Proporcione el estatus de cobranza del Servicio")]
-        public EstatusCobranzaServicioFunerario EstatusCobranza { get; set; }
+        public int EstatusCobranza { get; set; }
+
+        public ServicioFunerario()
+        {
+            ID = 0;
+            IdPaquete = 0;
+            IdAsesor = 0;
+            IdCliente = 0;
+            IdDomicilioCobranza = 0;
+            NumeroSolicitud = string.Empty;
+            NumeroContrato = string.Empty;
+            IdFrecuenciaAbonos = -1;
+            ServicioYaProporcionado = null;
+            EstatusCobranza = -1;
+        }
     }
 }

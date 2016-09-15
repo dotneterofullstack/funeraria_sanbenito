@@ -34,7 +34,7 @@ namespace Funeraria.DAL.DAO
             servicioFunerario.TitularSustituto = dataReader.GetString(dataReader.GetOrdinal("TitularSustituto"));
             servicioFunerario.IdFrecuenciaAbonos = dataReader.GetInt32(dataReader.GetOrdinal("IdFrecuenciaAbonos"));
             servicioFunerario.ServicioYaProporcionado = dataReader.GetBoolean(dataReader.GetOrdinal("ServicioYaProporcionado"));
-            servicioFunerario.EstatusCobranza = (EstatusCobranzaServicioFunerario)dataReader.GetInt32(dataReader.GetOrdinal("EstatusCobranza"));
+            servicioFunerario.EstatusCobranza = dataReader.GetInt32(dataReader.GetOrdinal("EstatusCobranza"));
 
             return servicioFunerario;
         }
