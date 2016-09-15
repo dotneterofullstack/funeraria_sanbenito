@@ -160,10 +160,10 @@
     <Content Include="FrontEnd\assets\partials\paquetes\index.html" />
     <Content Include="FrontEnd\assets\partials\paquetes\info.html" />
     <Content Include="FrontEnd\assets\partials\paquetes\listado.html" />
-    <Content Include="FrontEnd\assets\partials\servicios\agregar.cliente.html" />
     <Content Include="FrontEnd\assets\partials\servicios\agregar.html" />
-    <Content Include="FrontEnd\assets\partials\servicios\agregar.paquete.html" />
     <Content Include="FrontEnd\assets\partials\servicios\index.html" />
+    <Content Include="FrontEnd\assets\partials\servicios\info.html" />
+    <Content Include="FrontEnd\assets\partials\servicios\listado.html" />
     <Content Include="FrontEnd\index.html" />
     <Content Include="Global.asax" />
     <Content Include="scripts\ai.0.15.0-build58334.js" />

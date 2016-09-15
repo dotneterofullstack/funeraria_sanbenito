@@ -1,7 +1,7 @@
 ﻿USE FUNERARIA
 GO
 create procedure sp_select_ServiciosFunerarios(
-	@ID							int = 0,		
+		@ID							int = 0,		
 	@IdPaquete					int = 0,		
 	@IdAsesor					int = 0,		
 	@IdCliente					int = 0,		
@@ -14,7 +14,7 @@ create procedure sp_select_ServiciosFunerarios(
 )
 as begin
 	select
-		 ID							
+		 ServiciosFunerarios.ID							
 		,IdPaquete					
 		,IdAsesor					
 		,IdCliente					
@@ -28,9 +28,19 @@ as begin
 		,IdFrecuenciaAbonos			
 		,ServicioYaProporcionado	
 		,IdEstatusCobranza			
+		,Paquetes_servicio.Descripcion as Paquete
+		,Asesores.Nombre + ' ' + Asesores.ApellidoPat + ' ' + Asesores.ApellidoMat as Asesor
+		,Clientes.Nombre + ' ' + Clientes.ApellidoPat + ' ' + Clientes.ApellidoMat as Cliente
+		,Domicilios.Calle + ' No. ' + Domicilios.NumeroExterior as Domicilio
+		,Frecuencia_abonos.Descripcion as FrecuenciaAbonos
 	from ServiciosFunerarios
+	inner join Paquetes_servicio on Paquetes_servicio.ID = IdPaquete
+	inner join Asesores on Asesores.ID = IdAsesor
+	inner join Clientes on Clientes.ID = IdCliente
+	inner join Domicilios on Domicilios.ID = IdDomicilioCobranza
+	inner join Frecuencia_abonos on Frecuencia_abonos.ID = IdFrecuenciaAbonos
 	where
-		(@ID							 = 0 or			ID = @ID) and
+		(@ID							 = 0 or			ServiciosFunerarios.ID = @ID) and
 		(@IdPaquete						 = 0 or			IdPaquete = @IdPaquete) and
 		(@IdAsesor						 = 0 or			IdAsesor = @IdAsesor) and
 		(@IdCliente						 = 0 or			IdCliente = @IdCliente) and
