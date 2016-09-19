@@ -19,16 +19,16 @@
         </thead>
         <tbody>
             <tr ng-repeat="servicio in servicios">
-                <td>{{ servicio.FechaSolicitud }}</td>
-                <td>{{ servicio.FechaContrato }}</td>
+                <td>{{ servicio.FechaSolicitud | date:'MMM-dd-yyyy' }}</td>
+                <td>{{ servicio.FechaContrato | date:'MMM-dd-yyyy' }}</td>
                 <td>{{ servicio.NumeroSolicitud }}</td>
                 <td>{{ servicio.NumeroContrato }}</td>
                 <td>{{ servicio.Cliente }}</td>
                 <td>{{ servicio.Asesor }}</td>
                 <td>{{ servicio.Paquete }}</td>
-                <td>{{ servicio.Costo }}<td>
+                <td>{{ servicio.Costo | currency : "$" : 2 }}<td>
                 <td>{{ servicio.FrecuenciaAbonos }}</td>
-                <td>{{ servicio.ServicioYaProporcionado }}</td>
+                <td>{{ servicio.ServicioYaProporcionado ? "Si" : "No" }}</td>
                 <td>{{ servicio.Domicilio }}</td>
                 <td>{{ servicio.EstatusCobranza }}</td>
             </tr>

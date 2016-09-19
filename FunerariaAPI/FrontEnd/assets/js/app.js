@@ -50,7 +50,7 @@
             .state('servicios.listado', {
                 url: "",
                 templateUrl: "assets/partials/servicios/listado.html",
-                //controller: "listadoPaquetesCtl"
+                controller: "listadoSeerviciosCtl"
             })
             
             .state('servicios.nuevo', {
