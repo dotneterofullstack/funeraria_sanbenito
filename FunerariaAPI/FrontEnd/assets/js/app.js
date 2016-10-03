@@ -54,7 +54,7 @@
             })
             
             .state('servicios.nuevo', {
-                url: "/nuevo",
+                url: "/nuevo/{idCliente:int}",
                 templateUrl: "assets/partials/servicios/agregar.html",
                 controller: "nuevoServicioController"
             })

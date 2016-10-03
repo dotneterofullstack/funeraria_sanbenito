@@ -48,11 +48,16 @@
             <div class="form-group">
                 <label class="control-label col-sm-4" for="Cargo">Cliente:</label>
                 <div class="col-sm-8">
-                    <select class="form-control input-sm" required
+                    <!--<select class="form-control input-sm" required
                             ng-change="obtenerDomiciliosCliente(servicio.IdCliente)"
                             name="IdAsesor" id="IdAsesor" ng-model="servicio.IdCliente">
-                        <option ng-repeat="cliente in clientes" value="{{ cliente.ID }}">{{ cliente.Nombre + " " + cliente.ApellidoPat + " " + cliente.ApellidoMat }}</option>
-                    </select>
+                        <option ng-repeat="cliente in clientes" value="{{ cliente.ID }}" ng-selected="cliente.ID == servicio.IdCliente">{{ cliente.Nombre + " " + cliente.ApellidoPat + " " + cliente.ApellidoMat }}</option>
+                    </select>-->
+
+                    <select class="form-control input-sm" required
+                            ng-change="establecerIdCliente()"
+                            ng-options="cliente.Nombre + ' ' + cliente.ApellidoPat + ' ' + cliente.ApellidoMat for cliente in clientes track by cliente.ID"
+                            name="IdPaquete" id="IdPaquete" ng-model="clienteSeleccionado"></select>
                 </div>
             </div>
         </div>        

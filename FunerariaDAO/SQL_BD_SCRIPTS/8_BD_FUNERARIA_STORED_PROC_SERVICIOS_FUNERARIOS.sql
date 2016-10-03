@@ -68,7 +68,7 @@ create procedure guardar_servicioFunerario (
 	,@NumeroSolicitud			VARCHAR(10) 
 	,@NumeroContrato			VARCHAR(10) 
 	,@Costo						DECIMAL(9,2)
-	,@TitularSustituto			DECIMAL(9,2)
+	,@TitularSustituto			VARCHAR(500)
 	,@IdFrecuenciaAbonos		int			
 	,@ServicioYaProporcionado	BIT			
 	,@IdEstatusCobranza			int			

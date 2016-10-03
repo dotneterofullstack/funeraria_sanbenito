@@ -21,7 +21,7 @@
         init();
     })
 
-    .controller("nuevoServicioController", function ($scope, servicios, asesores, clientes, paquetes, frecuenciaAbonos, domicilios) {
+    .controller("nuevoServicioController", function ($scope, $stateParams, $filter, servicios, asesores, clientes, paquetes, frecuenciaAbonos, domicilios) {
         function init() {
             //servicios.init();
             $scope.servicio = {
@@ -39,6 +39,7 @@
             };
 
             $scope.paqueteSeleccionado = {};
+            $scope.clienteSeleccionado = {};
 
             asesores.get().then(function (response) {
                 $scope.asesores = response.data;
@@ -48,6 +49,15 @@
 
             clientes.get().then(function (response) {
                 $scope.clientes = response.data;
+                if ($stateParams.idCliente)
+                {
+                    var clientes = $filter('filter')($scope.clientes, { ID: $stateParams.idCliente });
+                    if (clientes.length == 1) {
+                        $scope.clienteSeleccionado = clientes[0];
+                        $scope.servicio.IdCliente = $scope.clienteSeleccionado.ID;
+                        $scope.obtenerDomiciliosCliente($scope.clienteSeleccionado.ID);
+                    }
+                }
             }, function (errorResponse) {
 
             });
@@ -70,6 +80,11 @@
             $scope.servicio.Costo = $scope.paqueteSeleccionado.Precio;
         }
 
+        $scope.establecerIdCliente = function () {
+            $scope.servicio.IdCliente = $scope.clienteSeleccionado.ID;
+            $scope.obtenerDomiciliosCliente($scope.clienteSeleccionado.ID);
+        }
+
         $scope.guardarServicio = function (servicio) {
             var nuevoServicio = angular.copy(servicio);
 
@@ -79,7 +94,7 @@
                     $scope.exitoGuardado = true;
                     $scope.nuevoId = response.data.ID;
                     init();
-                    $scope.frmServicio.$setPristine();
+                    $scope.frmServicioFunerario.$setPristine();
                 }, function (errorResponse) {
                     $scope.exitoGuardado = false;
                     $scope.fracasoGuardado = true;

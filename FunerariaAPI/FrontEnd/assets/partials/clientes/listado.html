@@ -19,7 +19,8 @@
                 <td>{{ cliente.ApellidoMat }}</td>
                 <td>{{ cliente.RFC }}</td>
                 <td>
-                    <a ui-sref="servicios.clientes.info({idCliente: cliente.ID})" class="btn btn-default btn-xs">Info</a>
+                    <a ui-sref="servicios.clientes.info({idCliente: cliente.ID})" class="btn btn-info btn-xs">Info</a>
+                    <a ui-sref="servicios.nuevo({idCliente: cliente.ID})" class="btn btn-primary btn-xs">Nuevo Srv. Funerario</a>
                 </td>
             </tr>
         </tbody>
